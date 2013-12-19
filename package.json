@@ -1,0 +1,34 @@
+{
+	"name": "valid8r_node",
+	"description": "Node version of the Valid8r library",
+	"version": "1.0.0",
+	"keywords": ["validation"],
+	"homepage": "http://thomporter.com/valid8r",
+	"author": "Thom Porter",
+	"repository": {
+		"type": "git",
+		"url" : "https://github.com/thomporter/valid8r_node"
+	},
+	"bugs": {
+		"url": "https://github.com/thomporter/valid8r_node/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/thomporter/valid8r_node/MIT-LICENSE"
+		}
+	],
+	"scripts": {
+		"start": "node examples.js",
+		"test": "mocha -R spec tests"
+	},
+	"engines": {
+		"node": ">= 0.8"
+	},
+	"devDependencies": {
+		"express": ">2.5.8",
+		"jade": "*",
+		"mocha": ">=1.15.1",
+		"node.extend": ">=1.0.8"
+	}
+}
