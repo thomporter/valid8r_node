@@ -27,7 +27,7 @@ commands:
 
 Here's a quick idea of how it works in node:
 
-	var Valid8r = require('./lib/valid8r.js');
+	var Valid8r = require('valid8r_node');
 	config = {
 	  rules: require('./form_configs/kitchen-sink.json'),
 	  data: req.body
