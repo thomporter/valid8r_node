@@ -12,7 +12,7 @@ https://github.com/thomporter/valid8r
 
 Either add the module as a dependency to your project or install it manually:
 
-	 npm install git://github.com/thomporter/valid8r_node.git
+	 npm install valid8r_node
 
 ## Examples
 
