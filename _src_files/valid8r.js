@@ -224,7 +224,7 @@ Valid8r = (function() {
     var re;
     if (value !== '') {
       re = this.preg_quote(rule.format);
-      re = re.replace('D', '\d').replace('A', '[a-zA-Z]');
+      re = re.replace(/D/g, '\\d').replace(/A/g, '[a-zA-Z]');
       if (!value.match(re)) {
         return rule.errStr || 'Does not match required format of: ' + rule.format;
       }
