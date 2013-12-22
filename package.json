@@ -2,7 +2,7 @@
 	"name": "valid8r_node",
 	"description": "Node version of the Valid8r library",
 	"version": "0.0.3",
-	"keywords": ["validation"],
+	"keywords": ["validation","validate","data validation","form validation"],
 	"homepage": "http://thomporter.com/valid8r",
 	"author": "Thom Porter",
 	"repository": {
