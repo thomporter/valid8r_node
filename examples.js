@@ -19,7 +19,7 @@ app.set('view engine','jade');
 
 // render the kitchen sink page for GET requests
 app.get('/kitchen-sink', function(req, res){
-	res.render('index', {data:{}})
+	res.render('kitchen-sink', {data:{}})
 });
 
 // handle POST requests for the kitchen sink
