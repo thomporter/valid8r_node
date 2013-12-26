@@ -33,7 +33,6 @@ app.post('/kitchen-sink', function(req, res){
 	
 	var errors = {}
 	var num_errors = 0;
-	
 	// instantiate a new validator
 	v = new Valid8r({
 		rules: rules,

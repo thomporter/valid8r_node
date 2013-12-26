@@ -219,6 +219,30 @@ body
 									+txtinput('url_withoutProtocols', data.url_withoutProtocols)
 								+err(errors.url_withoutProtocols)
 								.rule {"rule":"url", "noProtocols":true}
+					.form-group.row
+						.col-md-6
+							label.col-sm-3.control-label(for="ip") IP Address
+							.col-sm-9
+								+txtinput("ip", data.ip)
+								+err(errors.ip)
+								.rule {"rule":"ip"}
+						.col-md-6 Validate an IP address - any version.
+					.form-group.row
+						.col-md-6
+							label.col-sm-3.control-label(for="ipv4") IPv4
+							.col-sm-9
+								+txtinput("ipv4", data.ipv4)
+								+err(errors.ipv4)
+								.rule {"rule":"ip",v:4}
+						.col-md-6 Validate an IP address, version 4 only.
+					.form-group.row
+						.col-md-6
+							label.col-sm-3.control-label(for="ipv6") IPv6
+							.col-sm-9
+								+txtinput("ipv6", data.ipv6)
+								+err(errors.ipv6)
+								.rule {"rule":"ip",v:6}
+						.col-md-6 Validate an IP address, version 6 only.
 					.row
 						.col-md-6
 							input.pull-right.btn.btn-primary(type="submit",value="Submit")
