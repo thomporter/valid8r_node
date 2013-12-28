@@ -47,22 +47,31 @@ class Valid8r
             rules: {}
             data: {}
             customValidators: {}
+        
         @options = extend defaults, options
+        @setRules(@options.rules) if @options.rules
 
     setRules: (rules) ->
-        @options.rules = rules
+        ### @since v0.1.0 - _rules can be a property of the configuration object
+        allowing for other properties to be included, such as _globalConditions
+        ###
+        if rules._rules
+            @options.globalConditions = rules._globalConditions || {}
+            @options.rules = rules._rules
+        else
+            @options.globalConditions = {}
+            @options.rules = rules
+            
         
     satisfiesConditions: (field, r, rule) ->
-        return @options.data[r.conditions[rule.when].field] == r.conditions[rule.when].is
+        # @since v0.1.0 - conditions can be set globally
+        c = r.conditions?[rule.when] || @options.globalConditions[rule.when]
+        return @options.data[c.field] == c.is
         
     validateAll: () ->
-        console.log 'Validate All Called'
-        console.log 'iterating Rules:', @options.rules
-
         errors = {}
         for field of @options.rules
             if @options.rules[field]
-                console.log field
                 err = @validate(field, @options.data[field])
                 errors[field] = err if err != ''
         return errors
