@@ -45,7 +45,6 @@ app.post('/kitchen-sink', function(req, res){
 		}
 	})
 	errors = v.validateAll()
-	console.log(errors)
 
 	res.render('kitchen-sink', {data:req.body, errors:errors})
 	
